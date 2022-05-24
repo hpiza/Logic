@@ -2,8 +2,8 @@ package edu.iteso.logic;
 
 public class Or extends BinaryOperator {
 
-    public Or(Expression expression1, Expression expression2) {
-        super(expression1, expression2, '|');
+    public Or(Expression left, Expression right) {
+        super(left, right, '|');
     }
 
     @Override
@@ -34,8 +34,8 @@ public class Or extends BinaryOperator {
     public boolean equals(Object o) {
         if(this == o) return true;
         if(!(o instanceof Or)) return false;
-        Or and = (Or) o;
-        return getLeft().equals(and.getLeft()) && getRight().equals(and.getRight());
+        Or or = (Or) o;
+        return getLeft().equals(or.getLeft()) && getRight().equals(or.getRight()) || getLeft().equals(or.getRight()) && getRight().equals(or.getLeft());
     }
 
     @Override

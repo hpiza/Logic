@@ -51,4 +51,8 @@ public class Utils {
         return new Or(anyExpression(), anyExpression());
     }
 
+    public static Then anyThen() {
+        return new Then(anyExpression(), anyExpression());
+    }
+
 }

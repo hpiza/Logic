@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static edu.iteso.logic.Utils.*;
 
 public class TestAnd {
-
     @RepeatedTest(value=10)
     public void testGetValue() {
         And and =  anyAnd();
@@ -22,14 +21,16 @@ public class TestAnd {
         assertEquals(e11, e1);
     }
 
-    @Test
+    @RepeatedTest(value=10)
     public void testSimplifyNegation() {
         Expression e1 = anyExpression();
-        Expression e11 = new And(e1, new Not(e1)).simplify();
-        System.out.println(e1 + " ... " + e11 + " ... contradiction");
+        Expression e11 = new And(e1, new Not(e1));
+        System.out.println(e11 + " ... " + e11.simplify() + " ... contradiction");
+        e11 = e11.simplify();
         assertEquals(e11, Constant.False);
-        Expression e12 = new And(new Not(e1), e1).simplify();
-        System.out.println(e1 + " ... " + e12 + " ... contradiction");
+        Expression e12 = new And(new Not(e1), e1);
+        System.out.println(e12 + " ... " + e12.simplify() + " ... contradiction");
+        e12 = e12.simplify();
         assertEquals(e12, Constant.False);
     }
 
@@ -73,8 +74,8 @@ public class TestAnd {
         And and2 = and1.clone();
         assertEquals(and1, and2);
         assertNotSame(and1, and2);
-        assertNotSame(e1, and2.getLeft());
-        assertNotSame(e2, and2.getRight());
+        assertNotSame(and1.getLeft(), and2.getLeft());
+        assertNotSame(and1.getRight(), and2.getRight());
         System.out.println(and1 + " ... " + and2 + " ... clone");
     }
 

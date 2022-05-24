@@ -28,7 +28,10 @@ public class Constant extends Expression {
 
     @Override
     public boolean equals(Object o) {
-        return this == o;
+        if(this == o) return true;
+        if(!(o instanceof Constant)) return false;
+        Constant c = (Constant) o;
+        return this.getValue() == c.getValue();
     }
 
     @Override

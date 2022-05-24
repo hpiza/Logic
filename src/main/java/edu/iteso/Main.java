@@ -95,5 +95,23 @@ public class Main {
         Expression expB = or7.simplify(simplifiers);
         System.out.println(or7 + " --> " + expB);
 
+        Then then0 = new Then(Constant.False, Constant.False);
+        System.out.println(then0 + " --> " + then0.simplify());
+
+        Then then1 = new Then(Constant.True, Constant.False);
+        System.out.println(then1 + " --> " + then1.simplify());
+
+        Then then2 = new Then(va, va);
+        System.out.println(then2 + " --> " + then2.simplify());
+
+        Then then3 = new Then(new Not(va), va);
+        System.out.println(then3 + " --> " + then3.simplify());
+
+        Then then4 = new Then(new Not(va), vb);
+        System.out.println(then4 + " --> " + then4.simplify());
+
+        Then then5 = new Then(va, new Not(vb));
+        System.out.println(then5 + " --> " + then5.simplify());
+
     }
 }

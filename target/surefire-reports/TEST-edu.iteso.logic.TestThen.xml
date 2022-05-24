@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="edu.iteso.logic.TestAnd" time="0.055" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="edu.iteso.logic.TestThen" time="0.001" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.1.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -64,12 +64,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="edu.iteso.logic.TestAnd" name="edu.iteso.logic.TestAnd.testGetValue" time="0.05"/>
-  <testcase classname="edu.iteso.logic.TestAnd" name="edu.iteso.logic.TestAnd.testClone" time="0"/>
-  <testcase classname="edu.iteso.logic.TestAnd" name="edu.iteso.logic.TestAnd.testToString" time="0.003"/>
-  <testcase classname="edu.iteso.logic.TestAnd" name="edu.iteso.logic.TestAnd.testEquals" time="0"/>
-  <testcase classname="edu.iteso.logic.TestAnd" name="edu.iteso.logic.TestAnd.testSimplifyIdempotence" time="0"/>
-  <testcase classname="edu.iteso.logic.TestAnd" name="edu.iteso.logic.TestAnd.testSimplifyIdentity" time="0.001"/>
-  <testcase classname="edu.iteso.logic.TestAnd" name="edu.iteso.logic.TestAnd.testSimplifyDomination" time="0"/>
-  <testcase classname="edu.iteso.logic.TestAnd" name="edu.iteso.logic.TestAnd.testSimplifyNegation" time="0.001"/>
+  <testcase classname="edu.iteso.logic.TestThen" name="edu.iteso.logic.TestThen.testGetValue" time="0"/>
+  <testcase classname="edu.iteso.logic.TestThen" name="edu.iteso.logic.TestThen.testClone" time="0.001"/>
+  <testcase classname="edu.iteso.logic.TestThen" name="edu.iteso.logic.TestThen.testToString" time="0"/>
+  <testcase classname="edu.iteso.logic.TestThen" name="edu.iteso.logic.TestThen.testEquals" time="0"/>
 </testsuite>

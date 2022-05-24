@@ -2,8 +2,8 @@ package edu.iteso.logic;
 
 public class And extends BinaryOperator {
 
-    public And(Expression leftExpression, Expression rightExpression) {
-        super(leftExpression, rightExpression, '&');
+    public And(Expression left, Expression right) {
+        super(left, right, '&');
     }
 
     @Override
@@ -17,15 +17,16 @@ public class And extends BinaryOperator {
         Expression right = getRight();
         if (left.equals(right)) return left;
         if (left == Constant.False || right == Constant.False) return Constant.False;
-        if (left == Constant.True) return right;
-        if (right == Constant.True) return left;
         if (left instanceof Not) {
             Not not = (Not) left;
             if (not.getExpression().equals(right)) return Constant.False;
-        } else if (right instanceof Not) {
+        }
+        if (right instanceof Not) {
             Not not = (Not) right;
             if (not.getExpression().equals(left)) return Constant.False;
         }
+        if (left == Constant.True) return right;
+        if (right == Constant.True) return left;
         return this;
     }
 
